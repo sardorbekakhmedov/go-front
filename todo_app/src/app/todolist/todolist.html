@@ -1,0 +1,40 @@
+<h1 class="totdolist-h1" >Todo List</h1>
+
+<div class="page-container">
+  <div class="todo-card">
+    <h2>📝 Vazifalar Ro'yxati</h2>
+
+    <div class="input-area">
+      <input type="text" [(ngModel)]="newTask" (keyup.enter)="addTodo()" placeholder="Yangi vazifa...">
+      <button (click)="addTodo()" class="add-btn">Qo'shish</button>
+    </div>
+
+    <div class="filter-group">
+      <button (click)="filterStatus = 'all'" [class.active]="filterStatus === 'all'">Hammasi</button>
+      <button (click)="filterStatus = 'completed'" [class.active]="filterStatus === 'completed'">Bajarilgan</button>
+      <button (click)="filterStatus = 'pending'" [class.active]="filterStatus === 'pending'">Kutilmoqda</button>
+    </div>
+
+    <div class="status-indicator">
+      @switch (filterStatus) {
+        @case ('all') { <span class="badge blue">Barcha vazifalar</span> }
+        @case ('completed') { <span class="badge green">Faqat bajarilganlar</span> }
+        @case ('pending') { <span class="badge orange">Kutilayotgan vazifalar</span> }
+      }
+    </div>
+
+    <div class="list-wrapper">
+      @for (item of filteredTodos; track item.id) {
+        <div class="todo-item" [ngClass]="{'completed-style': item.isCompleted}">
+          <div class="task-info">
+            <input type="checkbox" [checked]="item.isCompleted" (change)="toggleComplete(item.id)">
+            <span>{{ item.task }}</span>
+          </div>
+          <button (click)="deleteTodo(item.id)" class="del-btn">❌</button>
+        </div>
+      } @empty {
+        <div class="empty-msg">Vazifalar topilmadi 📭</div>
+      }
+    </div>
+  </div>
+</div>
