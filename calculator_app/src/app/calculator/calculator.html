@@ -1,32 +1,26 @@
-<h1 class="calculator-h1" >Calculator</h1>
 
-<div class="container">
-  <div class="calculator">
-    <input type="text" id="display" [value]="displayValue" disabled>
-    
-    <div class="buttons">
-      <button class="clear" (click)="clearDisplay()">C</button>
-      <button (click)="deleteLast()">DEL</button>
-      <button class="operator" (click)="appendToDisplay('/')">/</button>
-      <button class="operator" (click)="appendToDisplay('*')">×</button>
-      
-      <button (click)="appendToDisplay('7')">7</button>
-      <button (click)="appendToDisplay('8')">8</button>
-      <button (click)="appendToDisplay('9')">9</button>
-      <button class="operator" (click)="appendToDisplay('-')">-</button>
-      
-      <button (click)="appendToDisplay('4')">4</button>
-      <button (click)="appendToDisplay('5')">5</button>
-      <button (click)="appendToDisplay('6')">6</button>
-      <button class="operator" (click)="appendToDisplay('+')">+</button>
-      
-      <button (click)="appendToDisplay('1')">1</button>
-      <button (click)="appendToDisplay('2')">2</button>
-      <button (click)="appendToDisplay('3')">3</button>
-      <button (click)="appendToDisplay('.')">.</button>
-      
-      <button (click)="appendToDisplay('0')">0</button>
-      <button class="equal" (click)="calculate()">=</button>
+<div class="calculator-h1" >
+  <h1>Calculator</h1>
+</div>
+
+<div class="calculator">
+
+  <div class="calculator-flex">
+    <div class="calculator-block">
+      <input class="input_calc" type="number" [(ngModel)]="num1" placeholder="num1">
+      <input class="input_calc" type="number" [(ngModel)]="num2" placeholder="num1">
     </div>
+
+  <div class="button_calc" >
+    <button (click)="sum()" >+</button>
+    <button>-</button>
+    <button>*</button>
+    <button>/</button>
   </div>
+  </div>
+
+  <div class="result" >
+    <h1> {{ result }} </h1>
+  </div>
+
 </div>

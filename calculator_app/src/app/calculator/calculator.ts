@@ -1,34 +1,21 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-calculator',
-  imports: [],
+  imports: [CommonModule ,FormsModule],
   templateUrl: './calculator.html',
   styleUrl: './calculator.css',
 })
 export class Calculator {
 
-  displayValue: string = '';
+  num1: number = 0;
+  num2: number = 0;
+  result: number = 0;
 
-  appendToDisplay(val: string) {
-    this.displayValue += val;
+  sum(): void {
+   this.result = (this.num1 + this.num2);
   }
-
-  clearDisplay() {
-    this.displayValue = '';
-  }
-
-  deleteLast() {
-    this.displayValue = this.displayValue.slice(0, -1);
-  }
-
-  calculate() {
-    try {
-      this.displayValue = eval(this.displayValue).toString();
-    } catch (e) {
-      this.displayValue = 'Xato!';
-      setTimeout(() => this.clearDisplay(), 1500);
-    }
-  }
-
+  
 }
