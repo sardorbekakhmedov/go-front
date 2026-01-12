@@ -1,67 +1,46 @@
 .counter-wrapper {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 30px;
-
-  background: black;
-  padding: 40px 60px;
-  border-radius: 16px;
-  color: black;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  background:  #bbcfd8;
+  padding: 50px 100px;
+  border-radius: 50px;
+  box-shadow: 0 10px 50px #08d89396;
 }
 
 .counter-box {
-  min-width: 120px;
-  height: 70px;
-
+  min-width: 150px;
+  min-height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  font-size: 32px;
+  font-size: 50px;
   font-weight: bold;
-
-  border: 2px solid #e5e7eb;
-  border-radius: 10px;
-
+  border-radius: 25px;
   background-color: #07e6e6;
 }
 
 .counter-h1 {
   color: #ef4444;
-  text-align: center;      /* gorizontal */
-  line-height: 90px;       /* vertikal */
+  text-align: center;      
+  line-height: 40px; 
 }
 
 .circle-btn {
-  width: 60px;
-  height: 60px;
-
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   border: 2px solid;
-
-  font-size: 28px;
+  font-size: 58px;
   font-weight: bold;
-
   cursor: pointer;
-  transition: all 0.2s ease;
   background: transparent;
-}
-
-.minus {
-  color: #ef4444;
-  border-color: #ef4444;
 }
 
 .minus:hover {
   background-color: #ef4444;
   color: white;
-}
-
-.plus {
-  color: #3b82f6;
-  border-color: #3b82f6;
 }
 
 .plus:hover {
