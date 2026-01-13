@@ -11,16 +11,17 @@
       <input class="input_calc" type="number" [(ngModel)]="num2" placeholder="num1">
     </div>
 
-  <div class="button_calc" >
-    <button (click)="sum()" >+</button>
-    <button>-</button>
-    <button>*</button>
-    <button>/</button>
-  </div>
+    <div class="button_calc" >
+      <button (click)="sum()" >+</button>
+      <button (click)="subtract()">-</button>
+      <button (click)="division()">/</button>
+      <button (click)="multiplication()">*</button>
+      <button (click)="clear()">Clear</button>
+    </div>
   </div>
 
   <div class="result" >
-    <h1> {{ result }} </h1>
+    <h1> <strong> Result:  </strong> {{ result }} </h1>
   </div>
 
 </div>

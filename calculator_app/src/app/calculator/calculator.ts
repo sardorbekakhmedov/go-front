@@ -10,12 +10,34 @@ import { FormsModule } from '@angular/forms';
 })
 export class Calculator {
 
-  num1: number = 0;
-  num2: number = 0;
-  result: number = 0;
+  num1?: number;
+  num2?: number;
+  result?: number;
 
   sum(): void {
-   this.result = (this.num1 + this.num2);
+    if(this.num1 && this.num2)
+      this.result = (this.num1 + this.num2);
+  }
+
+  subtract(): void {
+    if(this.num1 && this.num2)
+      this.result = (this.num1 - this.num2);
+  }
+
+  division(){
+    if(this.num1 && this.num2)
+      this.result = (this.num1 / this.num2);
+  }
+
+  multiplication(){
+    if(this.num1 && this.num2)
+      this.result = (this.num1 * this.num2);
+  }
+
+  clear(){
+      this.num1 = undefined;
+      this.num2 = undefined;
+      this.result = undefined;
   }
   
 }
