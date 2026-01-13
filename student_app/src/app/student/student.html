@@ -1,54 +1,47 @@
-<div class="page-wrapper">
-  <h1 class="student-h1">Students Dashboard</h1>
 
-  <div class="main-container">
-    <div class="card">
-      <div class="card-header">
-        <h2>🎓 Talabalar Ro'yxati</h2>
-      </div>
+<div class="main-title" >
+  <h2>Talabalar Ro'yxati</h2>
+</div>
 
-      <div class="input-group">
-        <input type="text" [(ngModel)]="newName" placeholder="Talaba ismi..." />
-        <input type="number" [(ngModel)]="newScore" placeholder="Ball..." />
-        <button (click)="addStudent()" class="add-btn"><span>+</span> Qo'shish</button>
-      </div>
+<div class="main-container" >
 
-      <div class="table-wrapper">
-        <table class="modern-table">
-          <thead>
-            <tr>
-              <th style="width: 10%">#</th>
-              <th style="width: 50%">Talaba Ismi</th>
-              <th style="width: 20%">Ball</th>
-              <th style="width: 20%">O'chirish</th>
-            </tr>
-          </thead>
-          <tbody>
-            @for (item of students; track item.id; let i = $index) {
-            <tr>
-              <td class="index-col">{{ i + 1 }}</td>
-              <td class="name-col">{{ item.name }}</td>
-              <td>
-                <span class="score-badge" [style.background-color]="getScoreColor(item.score)">
-                  {{ item.score }}
-                </span>
-              </td>
-              <td>
-                <button (click)="deleteStudent(item.id)" class="del-btn" title="O'chirish">
-                  ❌
-                </button>
-              </td>
-            </tr>
-            } @empty {
-            <tr>
-              <td colspan="4" class="empty-row">
-                <div class="empty-msg">⚠️ Hozircha talabalar ro'yxati bo'sh</div>
-              </td>
-            </tr>
-            }
-          </tbody>
-        </table>
-      </div>
-    </div>
+  <div class="input-div">
+    <input class="input" type="text" [(ngModel)] ="newName" placeholder="Talaba ismi..." />
+    <input class="input" type="number" [(ngModel)]="newScore" placeholder="Ball..." />
+    <button class="button" (click)="addStudent()"><span>+</span> Qo'shish</button>
   </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th >#</th>
+          <th >Talaba Ismi</th>
+          <th >Ball</th>
+          <th >O'chirish</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (student of students; track student.id; let i = $index) {
+        <tr>
+          <td >{{ i + 1 }}</td>
+          <td >{{ student.name }}</td>
+          <td>
+            <span [style.background]="getScoreColor(student.score)">
+              {{ student.score }}
+            </span>
+          </td>
+          <td>
+            <button (click)="deleteStudent(student.id)" title="O'chirish"> ❌ </button>
+          </td>
+        </tr>
+        } @empty {
+        <tr>
+          <td colspan="4" >
+            <div >⚠️ Hozircha talabalar ro'yxati bo'sh</div>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+
 </div>

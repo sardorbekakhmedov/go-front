@@ -21,14 +21,14 @@ export class Todolist {
   filterStatus: 'all' | 'completed' | 'pending' = 'all';
 
   addTodo() {
-    if (this.newTask.trim()) {
-      this.todos.push({
+    const newTodo: TodoItem = {
         id: Date.now(),
         task: this.newTask,
         isCompleted: false
-      });
+      }
+
+      this.todos.push(newTodo);
       this.newTask = '';
-    }
   }
 
   toggleComplete(id: number) {

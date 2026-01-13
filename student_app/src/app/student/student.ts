@@ -43,5 +43,4 @@ export class Student {
     if (score >= 60) return '#f1c40f'; 
     return '#e74c3c'; 
   }
-
 }
