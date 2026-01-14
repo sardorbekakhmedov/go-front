@@ -1,9 +1,9 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Counter } from "./counter/counter";
-import { Calculator } from "./calculator/calculator";
-import { Student } from "./student-list/student-list";
-import { Todolist } from "./todolist/todolist";
+import { Counter } from "./components/counter/counter";
+import { Calculator } from "./components/calculator/calculator";
+import { Student } from "./components/student-list/student-list";
+import { Todolist } from "./components/todolist/todolist";
 
 @Component({
   selector: 'app-root',
