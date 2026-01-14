@@ -1,1 +1,7 @@
-<p>student-card works!</p>
+<div style="border:1px solid #e58383; background: #88e2e2; padding:10px; margin-bottom:10px;">
+  <h4>Ismi:  {{ student.name }}</h4>
+  <p>Fan: {{ student.subject }}</p>
+  <p>Ball: {{ student.score }}   |   Baho: {{ student.grade }}</p>
+  <button (click)="onEdit()">Edit</button>
+  <button (click)="onDelete()">Delete</button>
+</div>

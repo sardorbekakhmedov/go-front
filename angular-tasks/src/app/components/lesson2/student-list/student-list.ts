@@ -9,7 +9,7 @@ interface StudentPerson {
 }
 
 @Component({
-  selector: 'app-student-list',
+  selector: 'student-list',
   imports: [CommonModule, FormsModule],
   templateUrl: './student-list.html',
   styleUrl: './student-list.css',

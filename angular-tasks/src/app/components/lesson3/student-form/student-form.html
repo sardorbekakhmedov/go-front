@@ -1,1 +1,10 @@
-<p>student-form works!</p>
+
+<h3>{{ student ? 'Talabani tahrirlash' : 'Yangi talaba qo\'shish' }}</h3>
+<form (ngSubmit)="onSubmit()">
+  <input type="text" [(ngModel)]="name" name="name" placeholder="Ism" required />
+  <input type="number" [(ngModel)]="score" name="score" placeholder="Ball" required min="0" max="100" />
+  <input type="text" [(ngModel)]="grade" name="grade" placeholder="Baho" required />
+  <input type="text" [(ngModel)]="subject" name="subject" placeholder="Fan" required />
+  <button type="submit">{{ student ? 'Saqlash' : 'Qo\'shish' }}</button>
+</form>
+<hr>

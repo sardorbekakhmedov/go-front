@@ -34,7 +34,7 @@ export class StudentService {
     this.students.push(newStudent);
   }
 
-  update(id:number, name: string, score: number): boolean {
+  update(id:number, name: string, score: number, grade: string, subject: string): boolean {
 
     let student = this.students.find(s => s.id == id);
 
@@ -43,6 +43,8 @@ export class StudentService {
 
     student.name = name;
     student.score = score;
+    student.grade = grade;
+    student.subject = subject;
 
     return true;
   }
