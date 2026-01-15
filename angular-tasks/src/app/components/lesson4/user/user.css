@@ -1,0 +1,10 @@
+.user-link {
+    display: block;
+    color: #60a5fa;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.user-link:hover {
+  color: #15f700;
+}

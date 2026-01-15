@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Student, StudentService } from '../../../services/lesson3/student/student-service';
+import { Student, StudentService } from '../../../services/lesson3/student-service';
 import { StudentForm } from "../student-form/student-form";
 import { StudentCard } from "../student-card/student-card";
 import { CommonModule } from '@angular/common';

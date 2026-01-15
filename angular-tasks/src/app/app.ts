@@ -6,10 +6,11 @@ import { Student } from "./components/lesson2/student-list/student-list";
 import { Todolist } from "./components/lesson2/student-list/todolist/todolist";
 import { StudentForm } from "./components/lesson3/student-form/student-form";
 import { StudentList } from "./components/lesson3/student-list/student-list";
+import { Home } from "./components/lesson4/home/home";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Counter, Calculator, Student, Todolist, StudentForm, StudentList],
+  imports: [RouterOutlet, Counter, Calculator, Student, Todolist, StudentForm, StudentList, Home],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

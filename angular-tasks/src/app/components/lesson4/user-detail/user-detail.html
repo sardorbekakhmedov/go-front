@@ -1,0 +1,19 @@
+<h1>user-detail works!</h1>
+
+@if (user) {
+  <p><b>Id:</b> {{ user.id }}</p>
+  <p><b>Name:</b> {{ user.name }}</p>
+  <p><b>Age:</b> {{ user.age }}</p>
+} @else {
+  <p>User topilmadi</p>
+}
+
+<br>
+
+<h1 class="user-link" [routerLink]="['/users']" > Back to users </h1>
+<br><br>
+
+<a style="color: #077fe7;"  [routerLink]="['/users', 1]">User 1</a>
+<br><br>
+<a style="color: #74b6f0;"  [routerLink]="['/users', 2]">User 2</a>
+

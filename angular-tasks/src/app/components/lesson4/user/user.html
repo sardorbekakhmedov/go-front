@@ -1,0 +1,17 @@
+
+<h1>USERS</h1>
+
+<div>
+    @for (user of userService.getAll(); track $index) {
+       <h3 
+            [routerLink]="['/users', user.id]" 
+            class="user-link"
+        >
+        
+        {{user.id}} -{{ user.name }} - {{ user.age }}
+
+       </h3>
+    }
+</div>
+<br>
+

@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Student } from '../../../services/lesson3/student/student-service';
+import { Student } from '../../../services/lesson3/student-service';
 
 @Component({
   selector: 'app-student-form',
