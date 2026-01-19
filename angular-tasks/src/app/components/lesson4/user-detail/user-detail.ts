@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, RouterLinkWithHref } from '@angular/router';
-import { UserService } from '../../../services/lesson4/user-service';
+import { UserService } from '../../../services/lesson4/user.service';
 import { User1 } from '../../../services/lesson4/models/user-model';
 
 @Component({
@@ -9,7 +9,7 @@ import { User1 } from '../../../services/lesson4/models/user-model';
   templateUrl: './user-detail.html',
   styleUrl: './user-detail.css',
 })
-export class UserDetail {
+export class UserDetail  {
   user?: User1;
 
   private route = inject(ActivatedRoute);
@@ -20,14 +20,14 @@ export class UserDetail {
   }
 
   loadUser () {
-    this.route.paramMap.subscribe(params => {
-      const id = Number(params.get('id'));
+    this.route.params.subscribe(params => {
+      const id = +params['id'];
       this.user = this.userService.getById(id);
     });
   }
 
   loadUser1() {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = +this.route.snapshot.params['id'];
     this.user = this.userService.getById(id);
   }
 

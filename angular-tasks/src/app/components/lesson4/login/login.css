@@ -1,0 +1,12 @@
+._login_div {
+    cursor: pointer;
+
+}
+
+.login_title {
+    color: #1eff00;
+}
+
+._login:hover {
+    color: aqua;
+}

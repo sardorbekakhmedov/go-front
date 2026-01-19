@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from "@angular/router";
+import { RouterOutlet, RouterLinkWithHref } from "@angular/router";
 
 @Component({
   selector: 'app-login',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, RouterLinkWithHref],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })

@@ -1,0 +1,26 @@
+.image {
+    width: 50%;
+    height: 30%;
+}
+
+.head_home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;        
+    cursor: pointer;
+}
+
+._user:hover {
+    color: aqua;
+}
+
+._user_detail:hover {
+    color: #07f01b;
+}
+
+._user_login:hover {
+    color: #ccf807;
+}
+
+

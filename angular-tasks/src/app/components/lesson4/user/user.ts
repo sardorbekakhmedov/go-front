@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { UserService } from '../../../services/lesson4/user-service';
+import { UserService } from '../../../services/lesson4/user.service';
 import { RouterLinkWithHref } from "@angular/router";
 
 @Component({

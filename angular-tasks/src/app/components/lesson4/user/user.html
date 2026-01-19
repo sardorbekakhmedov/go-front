@@ -1,7 +1,7 @@
 
-<h1>USERS</h1>
+<h1 class="title" >USER LIST</h1>
 
-<div>
+<div class="user_list" >
     @for (user of userService.getAll(); track $index) {
        <h3 
             [routerLink]="['/users', user.id]" 
@@ -14,4 +14,8 @@
     }
 </div>
 <br>
+
+<div>
+    <h1 class="_users" [routerLink]="['']"  >Back to home</h1>
+</div>
 
