@@ -27,7 +27,7 @@ export class UserDetail  {
   }
 
   loadUser1() {
-    const id = +this.route.snapshot.params['id'];
+    const id = +this.route.snapshot. params['id'];
     this.user = this.userService.getById(id);
   }
 

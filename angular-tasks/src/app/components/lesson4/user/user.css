@@ -1,7 +1,8 @@
 .user-link {
-    display: block;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
     color: #60a5fa;
-    text-decoration: underline;
     cursor: pointer;
 }
 
@@ -27,4 +28,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10%;
+}
+
+.forms {
+  border-color: #e2d410; 
+  border-radius: 10px;
+}
+
+.forms_button {
+  background-color: #00d2f7;
+  border-color: #e21010; 
+  border-radius: 10px;
+  border: 5px 
+}
+
+.forms_button:hover {
+  cursor: pointer;
+
+  background-color: #15f700;
 }

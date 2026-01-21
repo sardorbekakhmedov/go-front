@@ -1,16 +1,41 @@
 
 <h1 class="title" >USER LIST</h1>
 
+<div style="display: flex; justify-content: center; gap: 20px; ">
+    <label><p> Ism: </p> </label>
+    <input class="forms" type="text" [(ngModel)]="name" >
+
+    <label ><p>Yosh: </p> </label>
+    <input class="forms" type="number" [(ngModel)]="age" >
+
+    <label ><p> Role:</p> </label>
+    <select class="forms" [(ngModel)]="role">
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+    </select>
+
+    <button class="forms_button" (click)="addUser()" >Qo'shish</button>
+
+</div>
+
+
 <div class="user_list" >
     @for (user of userService.getAll(); track $index) {
-       <h3 
-            [routerLink]="['/users', user.id]" 
-            class="user-link"
-        >
-        
-        {{user.id}} -{{ user.name }} - {{ user.age }}
 
-       </h3>
+        <div style="display: flex; justify-content: center; align-items: center; gap: 10%;" >
+            <h3 
+                [routerLink]="['/users', user.id]" 
+                class="user-link"
+            >
+                {{user.id}} -{{ user.name }} - {{ user.age }} - {{user.role}}
+            </h3>
+
+            <button style="border-color: #e22910; border-radius: 10px;" 
+                (click)="deleteUser(user.id)" >🗑</button>
+        </div>
+
+
+
     }
 </div>
 <br>
@@ -18,4 +43,3 @@
 <div>
     <h1 class="_users" [routerLink]="['']"  >Back to home</h1>
 </div>
-
