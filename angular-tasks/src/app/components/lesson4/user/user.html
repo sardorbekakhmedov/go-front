@@ -1,5 +1,25 @@
 
 <h1 class="title" >USER LIST</h1>
+<br>
+<h1 class="title" >Yangi user qo'shish</h1>
+<div style="display: flex; justify-content: center; gap: 20px; ">
+    <label><p> Ism: </p> </label>
+    <input class="forms" type="text" [(ngModel)]="inputName" >
+
+    <label ><p>Yosh: </p> </label>
+    <input class="forms" type="number" [(ngModel)]="inputAge" >
+
+    <label ><p> Role:</p> </label>
+    <select class="forms" [(ngModel)]="inpuRole">
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+    </select>
+
+    <button class="forms_button" (click)="addUser()" >Yuborish</button>
+
+</div>
+
+<h1 class="title" >Search</h1>
 
 <div style="display: flex; justify-content: center; gap: 20px; ">
     <label><p> Ism: </p> </label>
@@ -10,17 +30,18 @@
 
     <label ><p> Role:</p> </label>
     <select class="forms" [(ngModel)]="role">
+        <option value="">None</option>
         <option value="user">User</option>
         <option value="admin">Admin</option>
     </select>
 
-    <button class="forms_button" (click)="addUser()" >Qo'shish</button>
+    <button class="forms_button" (click)="applyFilter()" >Izlash</button>
 
 </div>
 
 
 <div class="user_list" >
-    @for (user of userService.getAll(); track $index) {
+    @for (user of this.filteredUsers; track $index) {
 
         <div style="display: flex; justify-content: center; align-items: center; gap: 10%;" >
             <h3 

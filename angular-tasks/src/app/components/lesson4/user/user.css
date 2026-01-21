@@ -31,6 +31,7 @@
   gap: 10%;
 }
 
+
 .forms {
   border-color: #e2d410; 
   border-radius: 10px;
@@ -42,6 +43,7 @@
   border-radius: 10px;
   border: 5px 
 }
+
 
 .forms_button:hover {
   cursor: pointer;
