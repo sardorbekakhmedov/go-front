@@ -1,0 +1,13 @@
+<p>Quizlar ro‘yxati:</p>
+
+ @for (q of quizService.quizzes(); track q.id) {
+    <ol>
+         <li>
+             {{ q.title }} ({{ q.duration }} min)
+             <button [routerLink]="['/question', q.id]" >Savollarga o'tish</button>
+        </li>
+    </ol>
+
+} @empty {
+    <h2>Hech qanday quiz yuklanmadi.</h2>
+}

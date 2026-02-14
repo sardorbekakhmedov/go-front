@@ -1,0 +1,119 @@
+[
+  {
+    "id": 1,
+    "title": "Angular Asoslari",
+    "duration": 10,
+    "questions": [
+      {
+        "id": 1,
+        "text": "Angular-da ma'lumotni komponentdan template-ga uzatish nima deyiladi?",
+        "options": [
+          "Property Binding",
+          "Event Binding",
+          "Injection",
+          "Interpolation"
+        ],
+        "correctAnswerIndex": 0
+      },
+      {
+        "id": 2,
+        "text": "Qaysi direktiva elementni DOM-dan butunlay o'chiradi?",
+        "options": [
+          "[hidden]",
+          "ngIf",
+          "ngStyle",
+          "ngShow"
+        ],
+        "correctAnswerIndex": 1
+      },
+      {
+        "id": 3,
+        "text": "Service yaratish uchun qaysi buyruqdan foydalaniladi?",
+        "options": [
+          "ng g c service",
+          "ng g s service-name",
+          "ng create service",
+          "npm install service"
+        ],
+        "correctAnswerIndex": 1
+      },
+      {
+        "id": 4,
+        "text": "Dependency Injection qayerda amalga oshiriladi?",
+        "options": [
+          "HTML-da",
+          "CSS-da",
+          "Constructor-da",
+          "main.ts-da"
+        ],
+        "correctAnswerIndex": 2
+      },
+      {
+        "id": 5,
+        "text": "RxJS-da ma'lumot oqimini kuzatuvchi nima deyiladi?",
+        "options": [
+          "Observer",
+          "Signal",
+          "Emitter",
+          "Pipe"
+        ],
+        "correctAnswerIndex": 0
+      },
+      {
+        "id": 6,
+        "text": "Reactive Forms-da inputni boshqarish uchun nima ishlatiladi?",
+        "options": [
+          "ngModel",
+          "formControlName",
+          "v-model",
+          "name"
+        ],
+        "correctAnswerIndex": 1
+      },
+      {
+        "id": 7,
+        "text": "Router-da parametrlarni olish uchun qaysi class ishlatiladi?",
+        "options": [
+          "Router",
+          "Navigation",
+          "ActivatedRoute",
+          "RouteLink"
+        ],
+        "correctAnswerIndex": 2
+      },
+      {
+        "id": 8,
+        "text": "Angular 17+ versiyalarida holatni boshqarishning yangi usuli nima?",
+        "options": [
+          "Redux",
+          "Signals",
+          "Context API",
+          "Service Worker"
+        ],
+        "correctAnswerIndex": 1
+      },
+      {
+        "id": 9,
+        "text": "HttpClient qaysi modul ichida joylashgan?",
+        "options": [
+          "CommonModule",
+          "FormsModule",
+          "HttpClientModule",
+          "BrowserModule"
+        ],
+        "correctAnswerIndex": 2
+      },
+      {
+        "id": 10,
+        "text": "Bir komponentdan ikkinchisiga ma'lumot uzatishda @Input() qachon ishlatiladi?",
+        "options": [
+          "Ota komponentdan bolaga",
+          "Boladan otaga",
+          "Service-ga",
+          "LocalStorage-ga"
+        ],
+        "correctAnswerIndex": 0
+      }
+    ]
+  }
+]

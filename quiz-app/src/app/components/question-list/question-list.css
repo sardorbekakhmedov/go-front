@@ -1,0 +1,24 @@
+
+/* Tanlangan (lekin hali tekshirilmagan) holati */
+.option-item.selected {
+    border-color: #007bff;
+    background-color: #e7f3ff;
+}
+
+/* To'g'ri javob */
+.option-item.correct {
+    background-color: #3fe30d !important;
+    border-color: #0f5132 !important;
+    color: #0f5132;
+}
+
+/* Noto'g'ri javob */
+.option-item.incorrect {
+    background-color: #e60c1e !important;
+    border-color: #ec071a !important;
+    color: #ebe5e6;
+}
+
+.option-item input[type="radio"] {
+    cursor: pointer;
+}

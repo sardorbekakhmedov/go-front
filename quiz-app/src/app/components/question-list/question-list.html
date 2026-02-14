@@ -1,0 +1,55 @@
+<p>Savollar ro‘yxati:</p>
+
+@if (quizService.selectedQuiz(); as quiz) {
+      <h1>{{ quiz.title }}</h1>
+    
+    <div class="progress">
+        Savol: {{ currentIndex() + 1 }} / {{ quiz.questions.length }}
+    </div>
+
+    @if(currentQuestion(); as question) {
+        <div class="question-card">
+            <h3>{{ question.text }}</h3>
+        </div>
+
+        <div>
+
+           <ol class="options-list" style="list-style: none; padding: 0;">
+                @for (option of question.options; track $index) {
+                    <li 
+                    (click)="selectOption($index)" 
+                    class="option-item"
+                    [class.correct]="isAnswered(question.id) && $index === question.correctAnswerIndex"
+                    [class.incorrect]="isAnswered(question.id) && quizService.userAnswers()[question.id] === $index && $index !== question.correctAnswerIndex"
+                    [class.selected]="quizService.userAnswers()[question.id] === $index">
+                    
+                    <input 
+                        type="radio" 
+                        [name]="'q-' + question.id" 
+                        [checked]="quizService.userAnswers()[question.id] === $index"
+                        (change)="selectOption($index)">
+                    
+                    <span>{{ option }}</span>
+                    </li>
+                }
+            </ol>
+
+            <button (click)="prevQuestion()" [disabled]="currentIndex() === 0 " > <= Orqaga </button>
+            <button (click)="nextQuestion()" [disabled]="currentIndex() < quiz.questions.length -1"  > Keyingisi => </button>
+
+            @if(currentIndex() > quiz.questions.length -1 ) {
+                <button style="background-color: green; color: white;"> Testni yakunlash </button>
+            }
+        
+        </div>
+    }
+      
+      
+} @else {
+      <p>Yuklanmoqda yoki Quiz topilmadi...</p>
+}
+
+<br>
+<div style="margin-top: 50px;">
+    <button [routerLink]="['/quiz']">Quizlarga qaytish</button>
+</div>
