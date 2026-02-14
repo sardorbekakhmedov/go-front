@@ -1,10 +1,13 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { QuizService } from '../../data/services/quiz-service';
+import { Question } from '../../data/interfaces/quiz-model';
+import { NgClass } from "@angular/common";
+import { interval, map, Subscription, take } from 'rxjs';
 
 @Component({
   selector: 'app-question-list',
-  imports: [RouterLink],
+  imports: [RouterLink, NgClass],
   templateUrl: './question-list.html',
   styleUrl: './question-list.css',
 })
@@ -18,21 +21,61 @@ export class QuestionList {
   currentQuestion = computed(() => {
     const quiz = this.quizService.selectedQuiz();
     return quiz?.questions ? quiz.questions[this.currentIndex()] : null;
-  })
+  });
+
+  remainingTime = signal<number>(0);
+  private timerSub?: Subscription;
+
+  displayTime = computed(() => {
+    const minutes = Math.floor(this.remainingTime() / 60);
+    const seconds = this.remainingTime() % 60;
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  });  
 
   constructor() {
-    /*this.route.paramMap.subscribe(params => {
+    this.route.paramMap.subscribe(params => {
       const id = Number(params.get('id'));
       if (!isNaN(id)) 
         this.quizService.getQuizById(id);
     
-    });*/
+    });
 
-    const id = this.route.snapshot.paramMap.get('id');
+    /*const id = this.route.snapshot.paramMap.get('id');
 
-   if (id)
-      this.quizService.getQuizById(Number(id));
+    if (id)
+      this.quizService.getQuizById(Number(id));*/
+
+    setTimeout(() => {
+         const duration = this.quizService.selectedQuiz()?.duration|| 10;
+         this.startTimer(duration * 60);
+       }, 500);
   }
+
+  startTimer(seconds: number) {
+    this.remainingTime.set(seconds);
+    
+    this.timerSub = interval(1000).pipe(
+      take(seconds),
+      map(v => seconds - (v + 1))
+    ).subscribe({
+      next: (val) => {
+        this.remainingTime.set(val);
+        if (val <= 0) this.finishQuiz();
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    this.timerSub?.unsubscribe();
+  }
+
+  getOptionClass(question: Question, index: number) {
+    if (!this.isAnswered(question.id)) return '';
+    if (index === question.correctAnswerIndex) return 'correct';
+    if (this.quizService.userAnswers()[question.id] === index) return 'incorrect';
+    return '';
+  }
+
 
   nextQuestion() {
     const total = this.quizService.selectedQuiz()?.questions.length || 0;
@@ -47,7 +90,7 @@ export class QuestionList {
     }
   }
 
-  selectOption(optionIndex: number) {
+  selectedOptionSave(optionIndex: number) {
     const question = this.currentQuestion();
     if(question) {
       this.quizService.saveAnswer(question.id, optionIndex);
@@ -59,8 +102,13 @@ export class QuestionList {
   }
 
   finishQuiz() {
-    // Bu yerda natijani hisoblash yoki shunchaki o'tish mumkin
+    this.timerSub?.unsubscribe();
     this.router.navigate(['/result']); 
+  }
+
+
+  clearLocalStorage() {
+    this.quizService.clearStorage();
   }
 
 }

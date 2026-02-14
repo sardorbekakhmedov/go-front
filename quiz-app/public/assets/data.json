@@ -1,119 +1,173 @@
 [
   {
     "id": 1,
-    "title": "Angular Asoslari",
-    "duration": 10,
+    "title": "Komponentlar va Data Binding",
+    "duration": 5,
     "questions": [
-      {
-        "id": 1,
-        "text": "Angular-da ma'lumotni komponentdan template-ga uzatish nima deyiladi?",
-        "options": [
-          "Property Binding",
-          "Event Binding",
-          "Injection",
-          "Interpolation"
-        ],
-        "correctAnswerIndex": 0
-      },
-      {
-        "id": 2,
-        "text": "Qaysi direktiva elementni DOM-dan butunlay o'chiradi?",
-        "options": [
-          "[hidden]",
-          "ngIf",
-          "ngStyle",
-          "ngShow"
-        ],
-        "correctAnswerIndex": 1
-      },
-      {
-        "id": 3,
-        "text": "Service yaratish uchun qaysi buyruqdan foydalaniladi?",
-        "options": [
-          "ng g c service",
-          "ng g s service-name",
-          "ng create service",
-          "npm install service"
-        ],
-        "correctAnswerIndex": 1
-      },
-      {
-        "id": 4,
-        "text": "Dependency Injection qayerda amalga oshiriladi?",
-        "options": [
-          "HTML-da",
-          "CSS-da",
-          "Constructor-da",
-          "main.ts-da"
-        ],
-        "correctAnswerIndex": 2
-      },
-      {
-        "id": 5,
-        "text": "RxJS-da ma'lumot oqimini kuzatuvchi nima deyiladi?",
-        "options": [
-          "Observer",
-          "Signal",
-          "Emitter",
-          "Pipe"
-        ],
-        "correctAnswerIndex": 0
-      },
-      {
-        "id": 6,
-        "text": "Reactive Forms-da inputni boshqarish uchun nima ishlatiladi?",
-        "options": [
-          "ngModel",
-          "formControlName",
-          "v-model",
-          "name"
-        ],
-        "correctAnswerIndex": 1
-      },
-      {
-        "id": 7,
-        "text": "Router-da parametrlarni olish uchun qaysi class ishlatiladi?",
-        "options": [
-          "Router",
-          "Navigation",
-          "ActivatedRoute",
-          "RouteLink"
-        ],
-        "correctAnswerIndex": 2
-      },
-      {
-        "id": 8,
-        "text": "Angular 17+ versiyalarida holatni boshqarishning yangi usuli nima?",
-        "options": [
-          "Redux",
-          "Signals",
-          "Context API",
-          "Service Worker"
-        ],
-        "correctAnswerIndex": 1
-      },
-      {
-        "id": 9,
-        "text": "HttpClient qaysi modul ichida joylashgan?",
-        "options": [
-          "CommonModule",
-          "FormsModule",
-          "HttpClientModule",
-          "BrowserModule"
-        ],
-        "correctAnswerIndex": 2
-      },
-      {
-        "id": 10,
-        "text": "Bir komponentdan ikkinchisiga ma'lumot uzatishda @Input() qachon ishlatiladi?",
-        "options": [
-          "Ota komponentdan bolaga",
-          "Boladan otaga",
-          "Service-ga",
-          "LocalStorage-ga"
-        ],
-        "correctAnswerIndex": 0
-      }
+      { "id": 1, "text": "Angular-da ma'lumotni komponentdan template-ga uzatish nima deyiladi?", "options": ["Property Binding", "Event Binding", "Injection", "Interpolation"], "correctAnswerIndex": 0 },
+      { "id": 2, "text": "Ota komponentdan bolaga ma'lumot uzatishda qaysi dekorator ishlatiladi?", "options": ["@Input()", "@Output()", "@Injectable()", "@ViewChild()"], "correctAnswerIndex": 0 },
+      { "id": 3, "text": "Ikki tomonlama (Two-way) binding uchun qaysi sintaksis ishlatiladi?", "options": ["[value]", "(click)", "[(ngModel)]", "{{ value }}"], "correctAnswerIndex": 2 },
+      { "id": 4, "text": "Interpolation qaysi belgilar yordamida yoziladi?", "options": ["{ }", "[ ]", "{{ }}", "( )"], "correctAnswerIndex": 2 },
+      { "id": 5, "text": "Event Binding-da ma'lumot qaysi yo'nalishda harakatlanadi?", "options": ["Komponentdan Template-ga", "Template-dan Komponentga", "Service-dan Komponentga", "Ikki tomonlama"], "correctAnswerIndex": 1 },
+      { "id": 6, "text": "Property binding uchun qaysi qavslar ishlatiladi?", "options": ["{{ }}", "( )", "[ ]", "< >"], "correctAnswerIndex": 2 },
+      { "id": 7, "text": "Event binding uchun qaysi qavslar ishlatiladi?", "options": ["{{ }}", "( )", "[ ]", "{ }"], "correctAnswerIndex": 1 },
+      { "id": 8, "text": "Komponent klassidagi 'title' o'zgaruvchisini HTML-da ko'rsatish usuli?", "options": ["*title", "[title]", "{{ title }}", "(title)"], "correctAnswerIndex": 2 },
+      { "id": 9, "text": "Binding turlaridan qaysi biri faqat bir yo'nalishli (One-way)?", "options": ["ngModel", "Interpolation", "Both", "None"], "correctAnswerIndex": 1 },
+      { "id": 10, "text": "@Output() dekoratori qaysi class bilan birga ishlatiladi?", "options": ["Observable", "EventEmitter", "Subject", "BehaviorSubject"], "correctAnswerIndex": 1 }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Lifecycle Hooks",
+    "duration": 5,
+    "questions": [
+      { "id": 11, "text": "Komponent yaratilganda birinchi bo'lib qaysi metod ishga tushadi?", "options": ["ngOnInit", "ngOnChanges", "constructor", "ngAfterViewInit"], "correctAnswerIndex": 2 },
+      { "id": 12, "text": "Input o'zgaruvchilari o'zgarganda qaysi lifecycle hook ishlaydi?", "options": ["ngOnChanges", "ngDoCheck", "ngOnInit", "ngOnDestroy"], "correctAnswerIndex": 0 },
+      { "id": 13, "text": "Komponent DOM-dan o'chirilishidan oldin qaysi metod ishlaydi?", "options": ["ngOnDestroy", "ngAfterViewInit", "ngOnInit", "ngOnChanges"], "correctAnswerIndex": 0 },
+      { "id": 14, "text": "API-dan ma'lumot olish uchun eng to'g'ri joy qaysi?", "options": ["constructor", "ngOnInit", "ngOnDestroy", "ngAfterViewChecked"], "correctAnswerIndex": 1 },
+      { "id": 15, "text": "Child view-lar render bo'lib bo'lgandan keyin qaysi metod ishlaydi?", "options": ["ngAfterViewInit", "ngOnInit", "ngOnChanges", "ngDoCheck"], "correctAnswerIndex": 0 },
+      { "id": 16, "text": "ngOnInit necha marta ishga tushadi?", "options": ["Har bir o'zgarishda", "Faqat bir marta", "Cheksiz", "Ikki marta"], "correctAnswerIndex": 1 },
+      { "id": 17, "text": "ngOnChanges birinchi marta ngOnInit-dan oldin ishlaydimi?", "options": ["Ha", "Yo'q", "Faqat xato bo'lsa", "Bilmayman"], "correctAnswerIndex": 0 },
+      { "id": 18, "text": "Content projection (@ContentChild) tayyor bo'lganda ishlaydigan hook?", "options": ["ngAfterContentInit", "ngAfterViewInit", "ngOnInit", "ngDoCheck"], "correctAnswerIndex": 0 },
+      { "id": 19, "text": "Change detection mexanizmini qo'lda boshqarish uchun qaysi hook qulay?", "options": ["ngDoCheck", "ngOnChanges", "ngAfterViewChecked", "ngOnDestroy"], "correctAnswerIndex": 0 },
+      { "id": 20, "text": "Lifecycle hook-larni ishlatish uchun nima qilish kerak?", "options": ["Shunchaki yozish", "Interface-ni implement qilish", "Service-ga yozish", "Hech narsa"], "correctAnswerIndex": 1 }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Strukturaviy va Attribute Direktivlar",
+    "duration": 5,
+    "questions": [
+      { "id": 21, "text": "Elementni DOM-dan butunlay o'chiradigan direktiva qaysi?", "options": ["[hidden]", "ngIf", "ngStyle", "ngShow"], "correctAnswerIndex": 1 },
+      { "id": 22, "text": "Ro'yxatlarni iteratsiya qilish uchun qaysi direktiva ishlatiladi?", "options": ["*ngIf", "*ngFor", "ngSwitch", "ngClass"], "correctAnswerIndex": 1 },
+      { "id": 23, "text": "Elementga dinamik CSS klass qo'shish uchun nima ishlatiladi?", "options": ["ngStyle", "ngClass", "ngIf", "[id]"], "correctAnswerIndex": 1 },
+      { "id": 24, "text": "Strukturaviy direktivalar qanday belgi bilan boshlanadi?", "options": ["#", "@", "*", "$"], "correctAnswerIndex": 2 },
+      { "id": 25, "text": "Dinamik inline stillar berish uchun qaysi direktiva ishlatiladi?", "options": ["ngStyle", "ngClass", "style.css", "ngFor"], "correctAnswerIndex": 0 },
+      { "id": 26, "text": "ngFor-da 'index' ni qanday olish mumkin?", "options": ["let i = index", "index as i", "Har ikkisi", "Hech biri"], "correctAnswerIndex": 2 },
+      { "id": 27, "text": "ngIf-da 'else' blokini qanday ko'rsatish mumkin?", "options": ["else label", "ng-template orqali", "boshqa ngIf bilan", "else { }"], "correctAnswerIndex": 1 },
+      { "id": 28, "text": "Bir nechta shartlar orasidan tanlash uchun qaysi direktiva ishlatiladi?", "options": ["ngFor", "ngIf", "ngSwitch", "ngChoice"], "correctAnswerIndex": 2 },
+      { "id": 29, "text": "Attribute direktiva nima qiladi?",
+        "options": ["DOM elementini o'chiradi", "Element ko'rinishi yoki xatti-harakatini o'zgartiradi", "Yangi element qo'shadi", "Loop yaratadi"], "correctAnswerIndex": 1 },
+      { "id": 30, "text": "Custom direktiva yaratish buyrug'i?", "options": ["ng g c dir", "ng g d dir-name", "ng create dir", "npm install directive"], "correctAnswerIndex": 1 }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Servislar va Dependency Injection",
+    "duration": 5,
+    "questions": [
+      { "id": 31, "text": "Service yaratish uchun CLI buyrug'i qaysi?", "options": ["ng g c s", "ng g s name", "ng create service", "npm install service"], "correctAnswerIndex": 1 },
+      { "id": 32, "text": "Dependency Injection qayerda amalga oshiriladi?", "options": ["HTML-da", "Constructor-da", "CSS-da", "ngOnInit-da"], "correctAnswerIndex": 1 },
+      { "id": 33, "text": "@Injectable() dekoratori nima uchun kerak?", "options": ["Komponent yaratish uchun", "Klassni servis sifatida ro'yxatdan o'tkazish uchun", "Pipe yaratish uchun", "Module yaratish uchun"], "correctAnswerIndex": 1 },
+      { "id": 34, "text": "Singleton service nima?", "options": ["Har bir komponent uchun alohida servis", "Butun ilova uchun bitta umumiy servis nusxasi", "Faqat bir marta ishlaydigan funksiya", "Statik klass"], "correctAnswerIndex": 1 },
+      { "id": 35, "text": "providedIn: 'root' nimani anglatadi?", "options": ["Servis faqat root komponentda ishlaydi", "Servis butun ilova bo'ylab bitta bo'ladi", "Servis o'chirilgan", "Servis faqat child modullarda ishlaydi"], "correctAnswerIndex": 1 },
+      { "id": 36, "text": "DI orqali servisni qanday chaqiramiz?", "options": ["new MyService()", "constructor(private s: MyService)", "import MyService", "service.get()"], "correctAnswerIndex": 1 },
+      { "id": 37, "text": "Servislar asosan nima uchun ishlatiladi?", "options": ["UI chizish", "Ma'lumot almashish va mantiqni saqlash", "CSS yozish", "Faqat API chaqirish"], "correctAnswerIndex": 1 },
+      { "id": 38, "text": "Servisni faqat bitta komponent doirasida cheklash uchun qayerga yoziladi?", "options": ["app.module.ts", "providers: [] komponent ichida", "main.ts", "Hech qayerga"], "correctAnswerIndex": 1 },
+      { "id": 39, "text": "Hierarchical Injection nima?", "options": ["Servisning bir nechta nusxasi ierarxiya bo'yicha bo'lishi", "Servisni o'chirish", "Servisni faqat HTML-da ishlatish", "Faqat ota komponentda ishlatish"], "correctAnswerIndex": 0 },
+      { "id": 40, "text": "InjectionToken nima uchun ishlatiladi?", "options": ["Faqat class bo'lmagan qiymatlarni (masalan string) inject qilish uchun", "Service yaratish uchun", "Pipe yaratish uchun", "Loop yaratish uchun"], "correctAnswerIndex": 0 }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Pipes (Ma'lumotlarni formatlash)",
+    "duration": 5,
+    "questions": [
+      { "id": 41, "text": "Matnni hammasini katta harfga o'tkazish uchun qaysi pipe ishlatiladi?", "options": ["lowercase", "uppercase", "titlecase", "json"], "correctAnswerIndex": 1 },
+      { "id": 42, "text": "Observable-ga avtomatik subscribe bo'lish uchun qaysi pipe ishlatiladi?", "options": ["date", "async", "json", "currency"], "correctAnswerIndex": 1 },
+      { "id": 43, "text": "Sana (Date) obyektini formatlash uchun qaysi pipe ishlatiladi?", "options": ["time", "format", "date", "calendar"], "correctAnswerIndex": 2 },
+      { "id": 44, "text": "O'zimiz yozgan Pipe yaratish uchun qaysi dekorator ishlatiladi?", "options": ["@Pipe", "@Directive", "@Service", "@Component"], "correctAnswerIndex": 0 },
+      { "id": 45, "text": "Pipe-lar template-da qaysi belgi bilan ajratiladi?", "options": [",", ":", "|", "/"], "correctAnswerIndex": 2 },
+      { "id": 46, "text": "CurrencyPipe sukut bo'yicha qaysi valyutani ko'rsatadi?", "options": ["UZS", "EUR", "USD", "RUB"], "correctAnswerIndex": 2 },
+      { "id": 47, "text": "Pure pipe nima?", "options": ["Har doim ishlaydi", "Faqat kirish qiymati o'zgarganda ishlaydi", "API-dan ma'lumot oladi", "Xatolarni tutadi"], "correctAnswerIndex": 1 },
+      { "id": 48, "text": "Pipe-ga parametr qanday uzatiladi?", "options": ["pipe:param", "pipe(param)", "pipe | param", "pipe.param"], "correctAnswerIndex": 0 },
+      { "id": 49, "text": "SlicePipe nima vazifani bajaradi?", "options": ["Bo'lish", "Massiv yoki string-dan nusxa olish (kesish)", "Ko'paytirish", "O'chirish"], "correctAnswerIndex": 1 },
+      { "id": 50, "text": "Custom pipe-da qaysi metodni yozish majburiy?", "options": ["execute()", "run()", "transform()", "convert()"], "correctAnswerIndex": 2 }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "RxJS va Observables",
+    "duration": 5,
+    "questions": [
+      { "id": 51, "text": "RxJS-da ma'lumot oqimini kuzatuvchi nima deyiladi?", "options": ["Observer", "Subject", "Signal", "Pipe"], "correctAnswerIndex": 0 },
+      { "id": 52, "text": "Subject va BehaviorSubject o'rtasidagi asosiy farq?", "options": ["BehaviorSubject boshlang'ich qiymatga ega", "Subject tezroq ishlaydi", "Subject har doim qiymat saqlaydi", "Farqi yo'q"], "correctAnswerIndex": 0 },
+      { "id": 53, "text": "Ma'lumotni o'zgartirib (transform) beruvchi operator qaysi?", "options": ["filter", "map", "tap", "delay"], "correctAnswerIndex": 1 },
+      { "id": 54, "text": "Observable-dan ma'lumot olishni boshlash uchun nima qilish kerak?", "options": ["start()", "subscribe()", "get()", "call()"], "correctAnswerIndex": 1 },
+      { "id": 55, "text": "Faqat shartga javob beradigan ma'lumotlarni o'tkazuvchi operator?", "options": ["map", "filter", "take", "switchMap"], "correctAnswerIndex": 1 },
+      { "id": 56, "text": "Bir vaqtning o'zida bir nechta observable-ni birlashtiruvchi operator?", "options": ["combineLatest", "merge", "zip", "Hammasi"], "correctAnswerIndex": 3 },
+      { "id": 57, "text": "Observable-ni tugatish (unsubscribe) nima uchun muhim?", "options": ["Xotira oqib ketishini (memory leak) oldini olish", "Dasturni tezlatish", "Dizayn uchun", "Majburiy emas"], "correctAnswerIndex": 0 },
+      { "id": 58, "text": "of(1, 2, 3) operatori nima qaytaradi?", "options": ["Massiv", "Observable", "Promise", "Number"], "correctAnswerIndex": 1 },
+      { "id": 59, "text": "DebounceTime operatori nima uchun ishlatiladi?", "options": ["Vaqtni o'lchash", "Kiritish oqimini kechiktirish (masalan, search)", "Xatolarni tutish", "Ma'lumotni o'chirish"], "correctAnswerIndex": 1 },
+      { "id": 60, "text": "AsyncPipe ishlatilganda subscribe/unsubscribe-ni kim boshqaradi?", "options": ["Dasturchi", "Angular", "Brauzer", "Hech kim"], "correctAnswerIndex": 1 }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Routing va Navigatsiya",
+    "duration": 5,
+    "questions": [
+      { "id": 61, "text": "Komponentlar render qilinadigan joy qanday ataladi?", "options": ["<router-link>", "<router-outlet>", "<router-view>", "<div>"], "correctAnswerIndex": 1 },
+      { "id": 62, "text": "Dinamik URL parametrlarni (:id) olish uchun qaysi class ishlatiladi?", "options": ["Router", "ActivatedRoute", "Navigation", "ParamMap"], "correctAnswerIndex": 1 },
+      { "id": 63, "text": "Wildcard route (404 sahifa) qanday belgilanadi?", "options": ["path: '*'", "path: '**'", "path: 'any'", "path: 'error'"], "correctAnswerIndex": 1 },
+      { "id": 64, "text": "Sahifaga kirishni cheklash (Auth) uchun nima ishlatiladi?", "options": ["Resolver", "Guard (CanActivate)", "Interceptor", "Pipe"], "correctAnswerIndex": 1 },
+      { "id": 65, "text": "TypeScript kodida navigatsiya qilish usuli?", "options": ["window.location", "router.navigate()", "link.go()", "route.to()"], "correctAnswerIndex": 1 },
+      { "id": 66, "text": "Modullarni faqat kerak bo'lganda yuklash nima deyiladi?", "options": ["Eager loading", "Lazy loading", "Preloading", "Direct loading"], "correctAnswerIndex": 1 },
+      { "id": 67, "text": "Navigatsiya tugashidan oldin ma'lumotni yuklab olish nima?", "options": ["Resolver", "Guard", "Interceptor", "Service"], "correctAnswerIndex": 0 },
+      { "id": 68, "text": "RouterLinkActive direktivasi nima qiladi?", "options": ["Sahifani ochadi", "Aktiv linkka CSS klass qo'shadi", "Linkni o'chiradi", "URL-ni o'zgartiradi"], "correctAnswerIndex": 1 },
+      { "id": 69, "text": "CanDeactivate guard-i qachon ishlatiladi?", "options": ["Sahifaga kirishda", "Sahifadan chiqib ketishda", "API chaqirganda", "Login qilganda"], "correctAnswerIndex": 1 },
+      { "id": 70, "text": "Query parametrlar URL-da qanday ko'rinadi?", "options": ["/user/1", "/user?id=1", "/user#1", "/user:1"], "correctAnswerIndex": 1 }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Angular Forms (Reactive & Template)",
+    "duration": 5,
+    "questions": [
+      { "id": 71, "text": "Reactive Forms-da inputni bog'lash uchun nima ishlatiladi?", "options": ["ngModel", "formControlName", "name", "id"], "correctAnswerIndex": 1 },
+      { "id": 72, "text": "Template-driven formlar uchun qaysi modul kerak?", "options": ["ReactiveFormsModule", "FormsModule", "HttpClientModule", "CommonModule"], "correctAnswerIndex": 1 },
+      { "id": 73, "text": "Input qiymati to'g'ri ekanligini tekshirish uchun nima ishlatiladi?", "options": ["Validators", "Checkers", "Filters", "Guards"], "correctAnswerIndex": 0 },
+      { "id": 74, "text": "Form-ning barcha qiymatlarini bitta obyektda olish?", "options": ["form.values", "form.value", "form.data", "form.get()"], "correctAnswerIndex": 1 },
+      { "id": 75, "text": "Dinamik inputlar (massiv) yaratish uchun nima ishlatiladi?", "options": ["FormGroup", "FormArray", "FormControl", "FormBuilder"], "correctAnswerIndex": 1 },
+      { "id": 76, "text": "FormControl-ning holati (status) qanday bo'lishi mumkin?", "options": ["VALID/INVALID", "PENDING", "DISABLED", "Hammasi"], "correctAnswerIndex": 3 },
+      { "id": 77, "text": "FormGroup ichida boshqa FormGroup bo'lishi mumkinmi?", "options": ["Ha", "Yo'q", "Faqat bir marta", "Faqat reactive formda"], "correctAnswerIndex": 0 },
+      { "id": 78, "text": "Reactive formda qiymatni o'zgartirish uchun qaysi metod ishlatiladi?", "options": ["setValue()", "patchValue()", "Har ikkisi", "update()"], "correctAnswerIndex": 2 },
+      { "id": 79, "text": "Forma yuborilganini tekshirish xususiyati?", "options": ["submitted", "pristine", "touched", "dirty"], "correctAnswerIndex": 0 },
+      { "id": 80, "text": "Validators.required nima qiladi?", "options": ["Input bo'sh bo'lmasligini ta'minlaydi", "Faqat son qabul qiladi", "Email formatini tekshiradi", "Inputni yashiradi"], "correctAnswerIndex": 0 }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "HTTP Client va API",
+    "duration": 5,
+    "questions": [
+      { "id": 81, "text": "HttpClient qaysi modul ichida joylashgan?", "options": ["BrowserModule", "HttpClientModule", "FormsModule", "CommonModule"], "correctAnswerIndex": 1 },
+      { "id": 82, "text": "HTTP so'rov va javoblarni yo'lda tutib qolish (modify) uchun nima ishlatiladi?", "options": ["Guard", "Interceptor", "Resolver", "Pipe"], "correctAnswerIndex": 1 },
+      { "id": 83, "text": "HttpClient.get() metodi qanday turdagi ma'lumot qaytaradi?", "options": ["Promise", "Observable", "Array", "JSON"], "correctAnswerIndex": 1 },
+      { "id": 84, "text": "Post so'rovida yuboriladigan ma'lumot (body) nechanchi argument?", "options": ["1-chi", "2-chi", "3-chi", "Yuborilmaydi"], "correctAnswerIndex": 1 },
+      { "id": 85, "text": "HTTP xatolarini RxJS-da qanday tutamiz?", "options": ["try-catch", "catchError operatori", "if-else", "onerror"], "correctAnswerIndex": 1 },
+      { "id": 86, "text": "HttpParams klassi nima uchun ishlatiladi?", "options": ["Body yuborish", "Query parametrlarni qo'shish", "Header o'zgartirish", "URL-ni o'chirish"], "correctAnswerIndex": 1 },
+      { "id": 87, "text": "HttpHeaders nima uchun ishlatiladi?", "options": ["Token yuborish (Auth)", "Ma'lumotni formatlash", "Navigatsiya", "Validatsiya"], "correctAnswerIndex": 0 },
+      { "id": 88, "text": "Put so'rovi odatda nima uchun ishlatiladi?", "options": ["Ma'lumot olish", "Mavjud ma'lumotni yangilash", "Ma'lumot o'chirish", "Faqat login uchun"], "correctAnswerIndex": 1 },
+      { "id": 89, "text": "HttpClient observable-lari avtomatik 'complete' bo'ladimi?", "options": ["Ha, javob kelgandan keyin", "Yo'q, qo'lda yopish kerak", "Faqat post so'rovida", "Faqat xato bo'lganda"], "correctAnswerIndex": 0 },
+      { "id": 90, "text": "API-dan kelgan JSON-ni qaysi operator bilan boshqa ko'rinishga keltirish mumkin?", "options": ["filter", "map", "tap", "switchMap"], "correctAnswerIndex": 1 }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Angular Signals (Angular 17+)",
+    "duration": 5,
+    "questions": [
+      { "id": 91, "text": "Signal qiymatini o'qish uchun qanday chaqiriladi?", "options": ["count", "count()", "count.value", "count.get"], "correctAnswerIndex": 1 },
+      { "id": 92, "text": "Signal qiymatini to'g'ridan-to'g'ri o'zgartirish metodi qaysi?", "options": ["set()", "change()", "update()", "put()"], "correctAnswerIndex": 0 },
+      { "id": 93, "text": "Boshqa signallarga bog'liq bo'lgan (computed) signal qanday yaratiladi?", "options": ["signal()", "computed()", "effect()", "map()"], "correctAnswerIndex": 1 },
+      { "id": 94, "text": "Signal o'zgarganda biror amalni bajarish (masalan log) uchun nima ishlatiladi?", "options": ["computed()", "effect()", "watch()", "onUpdate()"], "correctAnswerIndex": 1 },
+      { "id": 95, "text": "Signal qiymatini oldingi holatiga tayanib o'zgartirish?", "options": ["set()", "update()", "refresh()", "mutate()"], "correctAnswerIndex": 1 },
+      { "id": 96, "text": "Signal va Observable farqi?", "options": ["Signal har doim joriy qiymatga ega", "Observable har doim tezroq", "Signal faqat sonlar bilan ishlaydi", "Farqi yo'q"], "correctAnswerIndex": 0 },
+      { "id": 97, "text": "Writablesignal nima?", "options": ["Faqat o'qiladigan signal", "Qiymati o'zgartirilishi mumkin bo'lgan signal", "API-dan keladigan signal", "Signal emas"], "correctAnswerIndex": 1 },
+      { "id": 98, "text": "Effect() qayerda ishga tushadi?", "options": ["Faqat injection context (constructor) da", "Har qanday funksiyada", "HTML template ichida", "Hech qayerda"], "correctAnswerIndex": 0 },
+      { "id": 99, "text": "Computed signal qiymatini set() bilan o'zgartirsa bo'ladimi?", "options": ["Ha", "Yo'q, u readonly", "Faqat shart bilan", "Faqat constructor ichida"], "correctAnswerIndex": 1 },
+      { "id": 100, "text": "Angular-ning yangi 'control flow' sintaksisi qaysi?", "options": ["*ngIf", "@if", "#if", "[if]"], "correctAnswerIndex": 1 }
     ]
   }
 ]

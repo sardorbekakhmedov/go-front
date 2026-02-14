@@ -1,13 +1,18 @@
-<p>Quizlar ro‘yxati:</p>
 
- @for (q of quizService.quizzes(); track q.id) {
-    <ol>
-         <li>
-             {{ q.title }} ({{ q.duration }} min)
-             <button [routerLink]="['/question', q.id]" >Savollarga o'tish</button>
-        </li>
-    </ol>
+<h1>Mavzular</h1>
 
-} @empty {
-    <h2>Hech qanday quiz yuklanmadi.</h2>
-}
+<ol class="quiz-nav">
+  @for (q of quizService.quizzes(); track q.id) {
+    <li class="quiz-item" [routerLink]="['/question', q.id]" 
+    routerLinkActive="selected-quiz">
+        <div>
+
+            <span class="title">{{ q.title }}</span>
+            
+            <div>
+                <span >{{ q.duration }} min</span>
+            </div>
+        </div>
+    </li>
+  }
+</ol>

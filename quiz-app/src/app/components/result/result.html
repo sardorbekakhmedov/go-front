@@ -1,1 +1,43 @@
-<p>result works!</p>
+
+@if(quizService.selectedQuiz(); as quiz) {
+    <div class="result-container">
+        <h2>Test Natijasi: {{ results().percent }}%</h2>
+        
+        <h3 [style.color]="results().passed ? '#0feb0b' : '#dc1313'">
+            Status: {{ results().passed ? 'Otdingiz' : 'Ota olmadingiz' }}
+        </h3>
+
+        <div class="summary">
+            <p>Jami savollar: {{ results().total }}</p>
+            <p>To'g'ri javoblar: {{ results().correct }}</p>
+            <p style="color: #dc1313;" >Noto'g'ri javoblar: {{ results().wrong }}</p>
+        </div>
+
+        <div class="analysis-list">
+            @for (q of quiz.questions; track q.id) {
+                <div class="analysis-card" [class.is-correct]="isCorrect(q)">
+                    <p><strong>{{ $index + 1 }}. {{ q.text }}</strong></p>
+                    
+                    <div>
+                        <p>Sizning javobingiz: 
+                            <span [class.wrong-text]="!isCorrect(q)">
+                                {{ q.options[quizService.userAnswers()[q.id]] || 'Belgilanmagan' }}
+                            </span>
+                        </p>
+                        
+                        @if (!isCorrect(q)) {
+                            <p class="correct-text">To'g'ri javob: {{ q.options[q.correctAnswerIndex] }}</p>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+
+        <button class="back-quiz" (click)="restart()" routerLink="/quiz">Ro'yxatga qaytish</button>
+    </div>
+}@else {
+    <div style="text-align: center; padding: 50px;">
+        <p>Ma'lumotlar yuklanmoqda...</p>
+        <button routerLink="/quiz">Ro'yxatga qaytish</button>
+    </div>
+}

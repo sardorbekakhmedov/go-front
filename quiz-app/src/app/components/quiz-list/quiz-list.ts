@@ -1,10 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { QuizService } from '../../data/services/quiz-service';
-import { RouterLink } from "@angular/router";
+import { RouterLink, RouterLinkActive } from "@angular/router";
 
 @Component({
   selector: 'app-quiz-list',
-  imports: [RouterLink],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './quiz-list.html',
   styleUrl: './quiz-list.css',
 })
@@ -16,6 +16,4 @@ export class QuizList {
     console.log('Quizzes: -> ');
     console.log(this.quizService.quizzes);
    }
-
-
 }

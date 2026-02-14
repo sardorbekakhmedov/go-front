@@ -12,8 +12,3 @@ export interface Question {
     correctAnswerIndex: number;
     selectedAnswer?: number;
 }
-
-export interface UserAnswers {
-  [questionId: number]: number;
-}
-

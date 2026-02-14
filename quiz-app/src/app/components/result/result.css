@@ -1,0 +1,33 @@
+.analysis-card {
+    border-left: 5px solid #ed0d23; 
+    background: #fff5f5;
+    color: black;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.is-correct {
+    border-left-color: #20e107;
+    background: #f8fff9;
+}
+
+.wrong-text { 
+    color: #dc3545; 
+    font-weight: bold;
+ }
+
+.correct-text { 
+    color: #1ef729;
+    font-weight: bold; 
+}
+
+.back-quiz {
+    background-color: #f3700b; 
+    color: white;
+    margin: 0 10px; 
+    padding: 10px;
+    border: 2px solid #0a38ee;
+    cursor: pointer;
+    border-radius: 5px;
+}

@@ -1,7 +1,10 @@
-<p>Savollar ro‘yxati:</p>
 
 @if (quizService.selectedQuiz(); as quiz) {
-      <h1>{{ quiz.title }}</h1>
+    <h1>{{ quiz.title }}</h1>
+
+    <div class="timer-box" [class.warning]="remainingTime() < 60">
+            Vaqt: <span class="time-text">{{ displayTime() }}</span>
+        </div>
     
     <div class="progress">
         Savol: {{ currentIndex() + 1 }} / {{ quiz.questions.length }}
@@ -9,47 +12,41 @@
 
     @if(currentQuestion(); as question) {
         <div class="question-card">
-            <h3>{{ question.text }}</h3>
+            <h3>{{question.id}}. {{ question.text }}</h3>
         </div>
 
-        <div>
-
-           <ol class="options-list" style="list-style: none; padding: 0;">
-                @for (option of question.options; track $index) {
-                    <li 
-                    (click)="selectOption($index)" 
+        <ul class="options-list" style="list-style: none; padding: 0;">
+            @for (option of question.options; track $index) {
+                <li 
+                    (click)="selectedOptionSave($index)" 
                     class="option-item"
-                    [class.correct]="isAnswered(question.id) && $index === question.correctAnswerIndex"
-                    [class.incorrect]="isAnswered(question.id) && quizService.userAnswers()[question.id] === $index && $index !== question.correctAnswerIndex"
-                    [class.selected]="quizService.userAnswers()[question.id] === $index">
-                    
-                    <input 
-                        type="radio" 
-                        [name]="'q-' + question.id" 
-                        [checked]="quizService.userAnswers()[question.id] === $index"
-                        (change)="selectOption($index)">
+                    [ngClass]="getOptionClass(question, $index)">
+
+                    <input type="radio" 
+                           [checked]="quizService.userAnswers()[question.id] === $index"
+                           name="q-{{question.id}}">
                     
                     <span>{{ option }}</span>
-                    </li>
-                }
-            </ol>
-
-            <button (click)="prevQuestion()" [disabled]="currentIndex() === 0 " > <= Orqaga </button>
-            <button (click)="nextQuestion()" [disabled]="currentIndex() < quiz.questions.length -1"  > Keyingisi => </button>
-
-            @if(currentIndex() > quiz.questions.length -1 ) {
-                <button style="background-color: green; color: white;"> Testni yakunlash </button>
+                </li>
             }
-        
+        </ul>
+
+        <div class="actions">
+            <button (click)="prevQuestion()" [disabled]="currentIndex() === 0"> <= Orqaga </button>
+            
+            @if (currentIndex() < quiz.questions.length - 1) {
+                <button (click)="nextQuestion()"> Keyingisi => </button>
+            } @else {
+            <button class="finish"  (click)="finishQuiz()" > Testni yakunlash </button>
+            }
         </div>
     }
-      
-      
 } @else {
       <p>Yuklanmoqda yoki Quiz topilmadi...</p>
 }
 
 <br>
-<div style="margin-top: 50px;">
-    <button [routerLink]="['/quiz']">Quizlarga qaytish</button>
+<div>
+    <button class="back-quiz" [routerLink]="['/quiz']" 
+    (click)="clearLocalStorage()" >Quizlarga qaytish</button>
 </div>

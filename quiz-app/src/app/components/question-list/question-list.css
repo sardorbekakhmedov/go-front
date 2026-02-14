@@ -1,24 +1,68 @@
-
-/* Tanlangan (lekin hali tekshirilmagan) holati */
-.option-item.selected {
-    border-color: #007bff;
-    background-color: #e7f3ff;
-}
-
-/* To'g'ri javob */
-.option-item.correct {
-    background-color: #3fe30d !important;
-    border-color: #0f5132 !important;
-    color: #0f5132;
-}
-
-/* Noto'g'ri javob */
-.option-item.incorrect {
-    background-color: #e60c1e !important;
-    border-color: #ec071a !important;
-    color: #ebe5e6;
-}
-
-.option-item input[type="radio"] {
+.option-item {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #c59595;
     cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.correct {
+    background-color: #0feb0b !important;
+    border-color: #c3e6cb !important;
+    color: #203a1e;
+}
+
+.incorrect {
+    background-color: #ec1d2e !important;
+    border-color: #f5c6cb !important;
+    color: #721c24;
+}
+
+.option-item:hover:not(.correct):not(.incorrect) {
+    background-color: #fbf7f7;
+    border-color: #1524f2 !important;
+    color: #721c24;
+}
+
+.actions {
+    text-align: center !important;
+    padding: 5px 0;
+
+}
+
+.actions button {
+    margin: 0 10px; 
+    padding: 10px;
+    border: 2px solid #0a38ee;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.actions :hover {
+    background: #d5eb0b !important;
+}
+
+.finish {
+    background-color: #f30b9a; 
+    color: white;
+}
+
+.back-quiz {
+    background-color: #f3700b; 
+    color: white;
+    margin: 0 10px; 
+    padding: 10px;
+    border: 2px solid #0a38ee;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.timer-box {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    color: #ec1d2e;
+    text-align: center;
+    margin: 20px;
 }
