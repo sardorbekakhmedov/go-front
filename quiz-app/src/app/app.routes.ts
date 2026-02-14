@@ -20,6 +20,11 @@ export const routes: Routes = [
         path: 'result',
         loadComponent: () => import('./components/result/result')
         .then(x => x.Result)
+    },
+     {
+        path: 'add',
+        loadComponent: () => import('./components/quiz-create/quiz-create')
+        .then(x => x.QuizCreate)
     }
 ];
 

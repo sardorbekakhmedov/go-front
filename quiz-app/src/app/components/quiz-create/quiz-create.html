@@ -1,0 +1,37 @@
+<div class="container">
+  <h2>Yangi Quiz Yaratish</h2>
+
+  <form [formGroup]="quizForm" (ngSubmit)="onSubmit()">
+    <div class="header-inputs">
+      <input formControlName="title" placeholder="Quiz nomi">
+      <input type="number" formControlName="duration" placeholder="Vaqt (daqiqa)">
+    </div>
+
+    <div formArrayName="questions">
+      @for (question of questions.controls; track $index; let i = $index) {
+        <div [formGroupName]="i" class="question-card">
+          <h4>Savol #{{ i + 1 }}</h4>
+          <input formControlName="text" class="question-text" placeholder="Savol matnini kiriting">
+
+          <div formArrayName="options" class="options-grid">
+            @for (opt of [0, 1, 2, 3]; track opt) {
+              <input [formControlName]="opt" [placeholder]="'Variant ' + (opt + 1)">
+            }
+          </div>
+
+          <div class="correct-index">
+            <label>To'g'ri javob tartib raqami (0-3):</label>
+            <input type="number" formControlName="correctAnswerIndex" min="0" max="3">
+          </div>
+
+          <button type="button" class="remove-btn" (click)="removeQuestion(i)">O'chirish</button>
+        </div>
+      }
+    </div>
+
+    <div class="footer-actions">
+      <button type="button" class="add-btn" (click)="addQuestion()">+ Savol Qo'shish</button>
+      <button type="submit" class="save-btn" [disabled]="quizForm.invalid">Saqlash</button>
+    </div>
+  </form>
+</div>

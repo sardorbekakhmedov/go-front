@@ -1,0 +1,76 @@
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.header-inputs {
+  margin-bottom: 20px;
+}
+
+.header-inputs input {
+  width: 100%; 
+  padding: 10px;
+  margin-bottom: 10px; 
+  border: 1px solid #ccc;
+  display: block; 
+}
+
+
+.question-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+}
+
+
+.question-text {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #aaa;
+}
+
+
+.options-grid input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 5px;
+  border: 1px solid #eee;
+}
+
+.correct-index {
+  margin: 15px 0;
+}
+
+.add-btn {
+  background-color: green;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.save-btn {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.remove-btn {
+  background-color: red;
+  color: white;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}

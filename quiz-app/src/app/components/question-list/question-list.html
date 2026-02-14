@@ -1,5 +1,8 @@
-
 @if (quizService.selectedQuiz(); as quiz) {
+
+    <pre>
+        {{quizService.selectedQuiz()?.id}}
+    </pre>
     <h1>{{ quiz.title }}</h1>
 
     <div class="timer-box" [class.warning]="remainingTime() < 60">
@@ -49,4 +52,6 @@
 <div>
     <button class="back-quiz" [routerLink]="['/quiz']" 
     (click)="clearLocalStorage()" >Quizlarga qaytish</button>
+
+    <button class="back-quiz" [routerLink]="['/add']" >Quiz qo'shish</button>
 </div>

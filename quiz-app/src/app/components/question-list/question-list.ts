@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, effect, inject, signal } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { QuizService } from '../../data/services/quiz-service';
 import { Question } from '../../data/interfaces/quiz-model';
@@ -32,35 +32,37 @@ export class QuestionList {
     return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
   });  
 
-  constructor() {
+ constructor() {
     this.route.paramMap.subscribe(params => {
       const id = Number(params.get('id'));
-      if (!isNaN(id)) 
+      if (!isNaN(id)) {
         this.quizService.getQuizById(id);
-    
+        const duration = this.quizService.selectedQuiz()?.duration || 10;
+        this.startTimer(duration * 60);
+      }
+
+      const lastIndex = localStorage.getItem('lastQuestionId');
+      if (lastIndex) 
+        this.currentIndex.set(Number(lastIndex));
     });
 
-    /*const id = this.route.snapshot.paramMap.get('id');
-
-    if (id)
-      this.quizService.getQuizById(Number(id));*/
-
-    setTimeout(() => {
-         const duration = this.quizService.selectedQuiz()?.duration|| 10;
-         this.startTimer(duration * 60);
-       }, 500);
+    effect(() => {
+      localStorage.setItem('lastQuestionId', this.currentIndex().toString());
+    });
   }
 
   startTimer(seconds: number) {
     this.remainingTime.set(seconds);
     
-    this.timerSub = interval(1000).pipe(
+    this.timerSub = interval(1000)
+    .pipe(
       take(seconds),
-      map(v => seconds - (v + 1))
-    ).subscribe({
+      map(v => seconds - (v + 1)) )
+    .subscribe({
       next: (val) => {
         this.remainingTime.set(val);
-        if (val <= 0) this.finishQuiz();
+        if (val <= 0) 
+          this.finishQuiz();
       }
     });
   }

@@ -50,7 +50,12 @@ export class QuizService {
         }
     }
 
+    addQuiz(newQuiz: Quiz) {
+        this.quizzes.update(current => [...current, newQuiz]);
+    }
+
     saveAnswer(questionId: number, answerIndex: number) {
+
         this.userAnswers.update( prev => ({
             ...prev,
             [questionId]: answerIndex
@@ -67,6 +72,7 @@ export class QuizService {
     clearStorage() {
         localStorage.removeItem('userAnswers');
         localStorage.removeItem('lastQuizId');
+        localStorage.removeItem('lastQuestionId');
         this.userAnswers.set({});
     }
 
